@@ -1,7 +1,8 @@
 const express = require('express');
 const connectDB = require('./config/db');
 var cors = require('cors');
-
+// Accessing the path module
+const path = require("path");
 
 //const urls = require('./routes/url');
 const app = express();
@@ -42,6 +43,13 @@ app.get('/redirect/:shortURLcode', (req,res)=>{
     console.log("find long URL");
 })
 
+
+// Step 1:
+app.use(express.static(path.resolve(__dirname, "./frontend/build")));
+// Step 2:
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));
+});
 
 const port = process.env.PORT || 8082;
 

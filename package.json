@@ -1,4 +1,5 @@
 {
+
   
   "name": "url-shortener",
   
@@ -9,15 +10,20 @@
   "main": "app.js",
   
   "scripts": {
+  "build": "cd frontend && npm run build",
+        "install-client": "cd frontend && npm install",
+        "heroku-postbuild": "npm run install-client && npm run build",
+        "server": "nodemon server.js",
+        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\"",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\""
+    
+  // "start": "node app.js",
   
     
-  "start": "node app.js",
+  // "app": "nodemon app.js",
   
     
-  "app": "nodemon app.js",
-  
-    
-  "test": "echo \"Error: no test specified\" && exit 1"
+  // "test": "echo \"Error: no test specified\" && exit 1"
   
   },
   
