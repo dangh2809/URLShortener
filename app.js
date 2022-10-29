@@ -31,7 +31,7 @@ app.get('/getClicks/:shortURL', (req,res) =>{
         })
         .catch(err => console.log(err.message))
 })
-app.get('/redirect/:shortURLcode', (req,res)=>{
+app.get('/r/:shortURLcode', (req,res)=>{
     URLs.findOne({shortURL: req.params.shortURLcode})
         .then(response => {console.log(response); response.clicks++; response.save(); res.redirect(response.longURL)})
         .catch(err => err.message)
