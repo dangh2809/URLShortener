@@ -1,7 +1,7 @@
 import React, { useState, Component, Link, useEffect} from 'react';
 import axios from 'axios';
 import { set } from 'mongoose';
-const baseURL = "https://urlshortener-hieu-app.herokuapp.com";
+const baseURL = "http://cops43319.xyz";
 function HomePage(){
     const [longURL , setLongURL] = useState("");
     const [shortURL, setShortURL] =  useState("");
@@ -56,7 +56,7 @@ function HomePage(){
                     <h5>Long URL: <a href={longURL} target="_blank"><span>{longURL}</span></a></h5>
                 </div>
                 <div className="col">
-                    <h5>Short  URL: <a href={`${baseURL}/redirect/${shortURL}`} target="_blank" ><span>{`${baseURL}/redirect/${shortURL}`}</span></a></h5>
+                    <h5>Short  URL: <a href={`${baseURL}${shortURL}`} target="_blank" ><span>{`${baseURL}/redirect/${shortURL}`}</span></a></h5>
                 </div>
                 <div className="col">
                     <h5>Clicks: <span>{clicks}</span></h5>
