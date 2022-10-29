@@ -1,7 +1,7 @@
 import React, { useState, Component, Link, useEffect} from 'react';
 import axios from 'axios';
 import { set } from 'mongoose';
-
+const baseURL = "https://urlshortener-hieu-app.herokuapp.com";
 function HomePage(){
     const [longURL , setLongURL] = useState("");
     const [shortURL, setShortURL] =  useState("");
@@ -21,11 +21,10 @@ function HomePage(){
     // }, []);
     async function generateShortURL(){
         try{
-            const response = await axios.post("https://urlshortener-hieu-app.herokuapp.com/generateShortURL",
+            const response = await axios.post(`${baseURL}/generateShortURL`,
             {
                 longURL: longURL
             });
-            let baseURL = "http://localhost:8082/";
             console.log(response.data)
             //console.log('generateShortURL');
             // console.log(response); 
@@ -57,7 +56,7 @@ function HomePage(){
                     <h5>Long URL: <a href={longURL} target="_blank"><span>{longURL}</span></a></h5>
                 </div>
                 <div className="col">
-                    <h5>Short  URL: <a href={`https://urlshortener-hieu-app.herokuapp.com/redirect/${shortURL}`} target="_blank" ><span>{`http://localhost:8082/redirect/${shortURL}`}</span></a></h5>
+                    <h5>Short  URL: <a href={`${baseURL}/redirect/${shortURL}`} target="_blank" ><span>{`${baseURL}/redirect/${shortURL}`}</span></a></h5>
                 </div>
                 <div className="col">
                     <h5>Clicks: <span>{clicks}</span></h5>
