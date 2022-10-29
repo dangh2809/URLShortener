@@ -1,7 +1,9 @@
 import React, { useState, Component, Link, useEffect} from 'react';
 import axios from 'axios';
 import { set } from 'mongoose';
-const baseURL = "http://www.cops43319.xyz";
+import { buildPath } from '../global';
+
+const baseURL = buildPath();
 function HomePage(){
     const [longURL , setLongURL] = useState("");
     const [shortURL, setShortURL] =  useState("");
@@ -10,8 +12,8 @@ function HomePage(){
   
 
     // useEffect(()=>{
-    //     if (isResult){
-    //     axios.get(`http://localhost:8082/getClicks/${shortURL}`)
+    //     if (shortURL != ""){
+    //         axios.get(`${baseURL}/getClicks/${shortURL}`)
     //         .then(res =>{
     //             console.log(res);
     //             setClicks(res.data[0].clicks);

@@ -2,120 +2,223 @@
 
   
 
+
+
   "name": "url-shortener",
 
   
+
+
 
   "version": "1.0.0",
 
   
 
+
+
   "description": "web app that shortens urls",
 
   
+
+
 
   "main": "app.js",
 
   
 
+
+
   "scripts": {
 
   
 
+
+
     
 
+
+
   "start": "nodemon app.js",
+
+  
+
+
+
+    
+
+
+
   "client": "npm start --prefix frontend",
+
+  
+
+
+
+    
+
+
+
   "dev": "concurrently \"run start\" \"npm run client\"",
-  "heroku-postbuild" : "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+
   
 
 
+
+    
+
+
+
+  "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+
   
+
+
 
   },
 
   
+
+
 
   "author": "Hieu Dang",
 
   
 
+
+
   "license": "ISC",
 
   
+
+
 
   "dependencies": {
 
   
 
+
+
     
+
+
 
   "body-parser": "^1.20.1",
 
   
 
+
+
     
+
+
+
+  "concurrently": "^7.5.0",
+
+  
+
+
+
+    
+
+
 
   "config": "^3.3.8",
 
   
 
+
+
     
+
+
 
   "cors": "^2.8.5",
 
   
 
+
+
     
+
+
 
   "dotenv": "^16.0.3",
 
   
 
+
+
     
+
+
 
   "express": "^4.18.2",
 
   
 
+
+
     
+
+
 
   "mongoose": "^6.7.0",
 
   
 
+
+
     
+
+
 
   "nanoid": "^3.3.4",
 
   
 
+
+
     
+
+
 
   "path": "^0.12.7",
 
   
 
+
+
     
+
+
 
   "validation": "^0.0.1"
 
   
 
+
+
   },
 
   
+
+
 
   "devDependencies": {
 
   
 
+
+
     
+
+
 
   "nodemon": "^2.0.20"
 
   
+
+
 
   }
 
