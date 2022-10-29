@@ -56,7 +56,7 @@ function HomePage(){
                     <h5>Long URL: <a href={longURL} target="_blank"><span>{longURL}</span></a></h5>
                 </div>
                 <div className="col">
-                    <h5>Short  URL: <a href={`${baseURL}${shortURL}`} target="_blank" ><span>{`${baseURL}/r/${shortURL}`}</span></a></h5>
+                    <h5>Short  URL: <a href={`${baseURL}/r/${shortURL}`} target="_blank" ><span>{`${baseURL}/r/${shortURL}`}</span></a></h5>
                 </div>
                 <div className="col">
                     <h5>Clicks: <span>{clicks}</span></h5>
