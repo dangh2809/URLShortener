@@ -12,12 +12,7 @@ app.use(cors({origin: true, credentials: true}));
 app.use(express.json({extend: false}));
 
 // connect DB
-app.get('/', (req, res) =>{
-    console.log('api executed')
-    // URLs.find()
-    // .then(url => res.json(url))
-    // .catch(err => res.status(404).json({nourlsfound: 'No urls found'}))
-});
+
 app.post('/generateShortURL', async (req, res) =>{
     URLs.create(req.body)
     .then(response => res.status(200).json(response))
@@ -43,15 +38,24 @@ app.get('/redirect/:shortURLcode', (req,res)=>{
     console.log("find long URL");
 })
 
+// development
+__dirname = path.resolve();
+if (process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname, "/frontend/build")));
+
+    app.get("*", function (request, response) {
+        response.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+      });
+} else {
+    app.get('/', (req, res) =>{
+        console.log('api executed')
+        // URLs.find()
+        // .then(url => res.json(url))
+        // .catch(err => res.status(404).json({nourlsfound: 'No urls found'}))
+    });
+}
 
 
-
-// Step 1:
-app.use(express.static(path.resolve(__dirname, "./frontend/build")));
-// Step 2:
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));
-});
 
 
 
