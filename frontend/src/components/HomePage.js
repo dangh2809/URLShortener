@@ -67,7 +67,7 @@ function HomePage(){
         )
     }
     return(
-        
+        <div className="border d-flex align-items-center justify-content-center" style={{height: '100vh'}}>
         <div className="container ">
             <div class="card text-center w-50 mx-auto my-auto">
                 <div class="card-header">
@@ -88,7 +88,7 @@ function HomePage(){
             </div>
             {isResult ? Result(): null}
         </div>
-        
+        </div>
     )
 }
 export default HomePage;
