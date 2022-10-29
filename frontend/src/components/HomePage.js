@@ -1,7 +1,7 @@
 import React, { useState, Component, Link, useEffect} from 'react';
 import axios from 'axios';
 import { set } from 'mongoose';
-const baseURL = "http://cops43319.xyz";
+const baseURL = "http://www.cops43319.xyz";
 function HomePage(){
     const [longURL , setLongURL] = useState("");
     const [shortURL, setShortURL] =  useState("");
