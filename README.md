@@ -6,7 +6,7 @@ Develop in MERN stack
 
 ## Before running
 Project needs to have mongodb string for the database.\
-Provide .env file:\ 
+Provide .env file: \ 
 .env example: 
  ```
  MONGO_URL=<mongodb_uri>
