@@ -6,15 +6,15 @@ Develop in MERN stack
 
 ## Before running
 Project needs to have mongodb string for the database.
-Provide .env file: 
-.env example: 
-    MONGO_URL=<mongodb_uri>
-    NODE_ENV= "production" | "development"
+  Provide .env file: 
+  .env example: 
+ ```MONGO_URL=<mongodb_uri>
+    NODE_ENV= "production" | "development"```
 
 ## Run the app
 To run the app, type the script:
-    "npm run dev"
-It will run both backend and frontend concurrently
+   ```npm run dev```
+  It will run both backend and frontend concurrently
 
 
 # References
