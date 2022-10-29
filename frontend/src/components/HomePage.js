@@ -21,7 +21,7 @@ function HomePage(){
     // }, []);
     async function generateShortURL(){
         try{
-            const response = await axios.post("http://localhost:8082/generateShortURL",
+            const response = await axios.post("https://urlshortener-hieu-app.herokuapp.com//generateShortURL",
             {
                 longURL: longURL
             });
@@ -57,7 +57,7 @@ function HomePage(){
                     <h5>Long URL: <a href={longURL} target="_blank"><span>{longURL}</span></a></h5>
                 </div>
                 <div className="col">
-                    <h5>Short URL: <a href={`http://localhost:8082/redirect/${shortURL}`} target="_blank" ><span>{`http://localhost:8082/redirect/${shortURL}`}</span></a></h5>
+                    <h5>Short URL: <a href={`https://urlshortener-hieu-app.herokuapp.com/redirect/${shortURL}`} target="_blank" ><span>{`http://localhost:8082/redirect/${shortURL}`}</span></a></h5>
                 </div>
                 <div className="col">
                     <h5>Clicks: <span>{clicks}</span></h5>
